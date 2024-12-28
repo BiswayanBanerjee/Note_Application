@@ -62,7 +62,7 @@ const App: React.FC = () => {
         <Route path="/login" element={<PublicRoute element={<LoginPage />} />} />
         <Route path="/signup" element={<PublicRoute element={<SignupPage />} />} />
         <Route path="/notes" element={<PrivateRoute element={<NotesPage />} />} />
-        <Route path="/" element={<PublicRoute element={<SignupPage />} />} />
+        <Route path="/" element={<PublicRoute element={<LoginPage />} />} />
         <Route path="*" element={<PublicRoute element={<LoginPage />} />} />
       </Routes>
     </Router>
