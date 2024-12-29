@@ -444,6 +444,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import api from "../../services/api";
 import { useNavigate } from "react-router-dom";
+import theme from "../../theme";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -451,7 +452,7 @@ const Login: React.FC = () => {
   const [otpSent, setOtpSent] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleToggleLoginMethod = () => {
     setUseOtp(!useOtp);
@@ -548,7 +549,7 @@ const Login: React.FC = () => {
             sx={{
               display: "flex",
               alignItems: "center",
-              justifyContent: "center",
+              justifyContent: isMobile ? "center" : "flex-start",
               marginBottom: 3,
             }}
           >
@@ -581,6 +582,8 @@ const Login: React.FC = () => {
             sx={{
               paddingLeft: isMobile ? 0 : 9,
               paddingRight: isMobile ? 0 : 9,
+              maxWidth: "78%",
+              margin: "auto"
             }}
           >
             <Typography
@@ -625,7 +628,8 @@ const Login: React.FC = () => {
                 <Button
                   variant="contained"
                   fullWidth
-                  sx={{ marginY: 2, paddingY: 1.5 }}
+                  sx={{ marginY: 2, paddingY: 1.5 , backgroundColor: "#367AFF",
+                    borderRadius: "10px",}}
                   onClick={() => handleSendOtp(formik.values.email)}
                   disabled={!formik.values.email || !!formik.errors.email}
                 >
@@ -676,10 +680,19 @@ const Login: React.FC = () => {
           <Typography
             align="center"
             variant="body2"
-            sx={{ cursor: "pointer" }}
+            sx={{ cursor: "pointer" , color: "blue"}}
             onClick={handleToggleLoginMethod}
           >
             {useOtp ? "Login with Password" : "Login with OTP"}
+          </Typography>
+          <Typography
+            align="center"
+            variant="body1"
+            sx={{ cursor: "pointer", marginTop: 2 }}
+            onClick={() => navigate("/signup")}
+          >
+            Don't have an Account?{" "}
+            <span style={{ color:"blue" }}>Signup</span>
           </Typography>
         </Grid>
       </Grid>
