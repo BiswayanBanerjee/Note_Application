@@ -6,7 +6,7 @@ interface PublicRouteProps {
 }
 
 const PublicRoute: React.FC<PublicRouteProps> = ({ element }) => {
-  const isAuthenticated = !!localStorage.getItem("token"); // Check if the user is authenticated
+  const isAuthenticated = !!localStorage.getItem("token");
 
   return isAuthenticated ? <Navigate to="/notes" /> : element;
 };
