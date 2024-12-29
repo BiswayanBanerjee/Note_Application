@@ -443,8 +443,10 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import api from "../../services/api";
+import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
+  const navigate = useNavigate();
   const [useOtp, setUseOtp] = useState(false);
   const [otpSent, setOtpSent] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -491,7 +493,8 @@ const Login: React.FC = () => {
           });
           localStorage.setItem("token", response.data.token);
         }
-        window.location.href = "/notes";
+        // window.location.href = "/notes";
+        navigate("/notes");
       } catch (error: any) {
         alert(error.response?.data?.message || "Login failed");
       }
