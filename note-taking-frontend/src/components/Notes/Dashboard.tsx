@@ -573,6 +573,8 @@ import {
 } from "@mui/icons-material";
 import {jwtDecode} from "jwt-decode";
 import api from "../../services/api";
+import { useNavigate } from "react-router-dom";
+
 
 const Dashboard: React.FC = () => {
   interface Note {
@@ -592,6 +594,8 @@ const Dashboard: React.FC = () => {
   const [newNote, setNewNote] = useState<Partial<Note>>({ title: "", content: "" });
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [user, setUser] = useState<User | null>(null);
+  const navigate = useNavigate();
+
 
   const fetchNotes = async () => {
     try {
@@ -675,7 +679,8 @@ const Dashboard: React.FC = () => {
 
   const handleSignOut = () => {
     localStorage.removeItem("token");
-    window.location.href = "/login";
+    // window.location.href = "/login";
+    navigate("/login");
   };
 
   useEffect(() => {
@@ -692,7 +697,8 @@ const Dashboard: React.FC = () => {
         console.error("Invalid token:", error);
       }
     } else {
-      window.location.href = "/login";
+      // window.location.href = "/login";
+      navigate("/login");
     }
   }, []);
 
