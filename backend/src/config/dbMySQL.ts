@@ -15,9 +15,9 @@ import mysql from "mysql2/promise";
 
 // Directly include MySQL connection details
 const MYSQL_HOST = "sql12.freesqldatabase.com"; // Your MySQL host
-const MYSQL_USER = "sql12754609"; // Your MySQL username
-const MYSQL_PASSWORD = "shKzpe2TVS"; // Your MySQL password
-const MYSQL_DATABASE = "sql12754609"; // Your MySQL database name
+const MYSQL_USER = "sql12755688"; // Your MySQL username
+const MYSQL_PASSWORD = "kyi6QNnWj6"; // Your MySQL password
+const MYSQL_DATABASE = "sql12755688"; // Your MySQL database name
 const MYSQL_PORT=3306;
 
 export const mysqlPool = mysql.createPool({
