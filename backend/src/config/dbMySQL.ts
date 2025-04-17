@@ -39,11 +39,11 @@ dotenv.config();
 const MYSQL_PORT = parseInt(process.env.MYSQL_PORT || "3306", 10);
 
 const mysqlPool = mysql.createPool({
-  host: process.env.MYSQL_HOST,
-  user: process.env.MYSQL_USER,
-  password: process.env.MYSQL_PASSWORD,
-  database: process.env.MYSQL_DATABASE,
-  port: MYSQL_PORT,  // Ensure this is a number
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: DB_PORT,  // Ensure this is a number
 });
 
 export default mysqlPool;
