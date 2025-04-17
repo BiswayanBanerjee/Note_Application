@@ -46,4 +46,4 @@ const mysqlPool = mysql.createPool({
   port: DB_PORT,  // Ensure this is a number
 });
 
-export default mysqlPool;
+export { mysqlPool };
