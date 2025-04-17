@@ -32,12 +32,18 @@
 import mysql from "mysql2/promise";
 import dotenv from "dotenv";
 
-dotenv.config(); // Load environment variables from .env
+// Load environment variables
+dotenv.config();
 
-export const mysqlPool = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: process.env.DB_PORT || 3306,
+// Ensure port is treated as a number
+const MYSQL_PORT = parseInt(process.env.MYSQL_PORT || "3306", 10);
+
+const mysqlPool = mysql.createPool({
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
+  port: MYSQL_PORT,  // Ensure this is a number
 });
+
+export default mysqlPool;
