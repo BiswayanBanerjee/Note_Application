@@ -36,7 +36,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // Ensure port is treated as a number
-const MYSQL_PORT = parseInt(process.env.MYSQL_PORT || "3306", 10);
+const DB_PORT = parseInt(process.env.DB_PORT || "3306", 10);
 
 const mysqlPool = mysql.createPool({
   host: process.env.DB_HOST,
