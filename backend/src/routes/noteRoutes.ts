@@ -1,25 +1,3 @@
-// import express from "express";
-// import { createNote, deleteNote } from "../controllers/noteController";
-// import { authenticate } from "../middleware/authMiddleware";
-
-// const router = express.Router();
-
-// router.post("/", authenticate, createNote);
-// router.delete("/:id", authenticate, deleteNote);
-
-// export default router;
-
-// import express from "express";
-// import { createNote, deleteNote } from "../controllers/noteController";
-// import { authenticate } from "../middleware/authMiddleware";
-
-// const router = express.Router();
-
-// router.post("/", authenticate, createNote); // Works because `authenticate` and `createNote` return void/Promise<void>
-// router.delete("/:id", authenticate, deleteNote);
-
-// export default router;
-
 import express from "express";
 import { createNote, deleteNote, viewNote, editNote, viewAllNotes } from "../controllers/noteController";
 import { authenticate } from "../middleware/authMiddleware";
