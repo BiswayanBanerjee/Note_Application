@@ -6,6 +6,7 @@ import { connectMongoDB } from "./config/dbMongo";
 import { mysqlPool } from "./config/dbMySQL";
 import authRoutes from "./routes/authRoutes";
 import noteRoutes from "./routes/noteRoutes";
+import healthRoutes from "./routes/health";
 import { createUserTable } from "./models/user";
 
 const app = express();
@@ -23,6 +24,7 @@ app.use(
 
 app.use(express.json());
 
+app.use("/api/health", healthRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/notes", noteRoutes);
 

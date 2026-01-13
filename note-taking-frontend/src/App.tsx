@@ -5,9 +5,14 @@ import SignupPage from "./pages/SignupPage";
 import NotesPage from "./pages/NotesPage";
 import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
+import WakeUpModal from "./components/wakeUpModal";
+import { useWakeUpBackend } from "./hooks/useWakeUpBackend";
 
 const App: React.FC = () => {
+  const waking = useWakeUpBackend();
   return (
+    <>
+     <WakeUpModal open={waking} />
     <Router>
       <Routes>
         <Route path="/login" element={<PublicRoute element={<LoginPage />} />} />
@@ -17,6 +22,7 @@ const App: React.FC = () => {
         <Route path="*" element={<PublicRoute element={<LoginPage />} />} />
       </Routes>
     </Router>
+    </>
   );
 };
 
