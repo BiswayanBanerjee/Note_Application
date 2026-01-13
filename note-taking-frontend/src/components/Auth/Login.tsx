@@ -102,7 +102,7 @@ const Login: React.FC = () => {
             xs={12}
             md={7}
             sx={{
-              backgroundImage: "url('/assets/images/signup-bg.png')",
+              backgroundImage: "url('/assets/images/signup-bg.webp')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -127,7 +127,7 @@ const Login: React.FC = () => {
             }}
           >
             <img
-              src="/assets/images/hd-icon.png"
+              src="/assets/images/hd-icon.webp"
               alt="HD Icon"
               style={{ width: 32, height: 32, marginRight: 8 }}
             />

@@ -166,7 +166,7 @@ const Dashboard: React.FC = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundImage: "url(/assets/images/bg-img.png)",
+          backgroundImage: "url(/assets/images/bg-img.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           opacity: 0.9,
@@ -202,7 +202,7 @@ const Dashboard: React.FC = () => {
             }}
           >
             <img
-              src="/assets/images/hd-icon.png"
+              src="/assets/images/hd-icon.webp"
               alt="HD Icon"
               style={{ width: 32, height: 32, marginRight: 8 }}
             />

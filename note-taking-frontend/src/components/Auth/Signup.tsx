@@ -160,7 +160,7 @@ const Signup: React.FC = () => {
         >
           <Box sx={{ display: "flex", alignItems: "center", marginBottom: 3 }}>
             <img
-              src="/assets/images/hd-icon.png"
+              src="/assets/images/hd-icon.webp"
               alt="HD Icon"
               style={{ width: 32, height: 32, marginRight: 8 }}
             />
@@ -355,7 +355,7 @@ const Signup: React.FC = () => {
             xs={12}
             md={7}
             sx={{
-              backgroundImage: "url('/assets/images/signup-bg.png')",
+              backgroundImage: "url('/assets/images/signup-bg.webp')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
